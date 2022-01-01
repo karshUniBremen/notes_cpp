@@ -485,7 +485,7 @@ The need for **dynamic_cast** generally arises to perform **derived class operat
 
 In short, **dynamic_cast is used to check at run-time if a downcast can be down correctly or not.** In case of upcast it either give compile error or returns nullptr or throws expection depending on polymorphic base class and pointer/reference explained later.
 
-<img src="/home/karsh/snap/typora/46/.config/Typora/typora-user-images/image-20211230080051540.png" alt="image-20211230080051540" style="zoom:50%;" />
+<img src="./image-20211230080051540.png" alt="image-20211230080051540" style="zoom:50%;" />
 
 In c++ downcast is allowed by dynamic_cast, whereas upcast is not allowed by dynamic_cast. **Downcast**  is casting a derived class object to a base class pointer
 
@@ -1379,8 +1379,6 @@ int main()
 
 
 
-#### 
-
 ### References
 
 - References are pointers in disguise. References are syntactic sugar for pointers. 
@@ -1425,8 +1423,6 @@ x += 1;  //error: as value cant be changed
 int& y{b}; //error:Cannot assign a non-const reference to const variable.binding reference of type 'int&' to 'const int'.
 const int& y{b}; // Ok: we can assign const value pointer (cant change value in the pointed location) to a constant variable. 
 ```
-
-
 
 
 
@@ -1717,8 +1713,6 @@ if(!p2){
 
 
 
-
-
 ### Shared pointers
 
 There are few points about it: 
@@ -1853,13 +1847,13 @@ wp.reset();
 
 
 
-![image-20211227201100205](/home/karsh/snap/typora/46/.config/Typora/typora-user-images/image-20211227201100205.png)
+![image-20211227201100205](./image-20211227201100205.png)
 
 
 
 ##### Weak pointer main application is to remove cyclic dependency between shared_ptr.
 
-![image-20211227201008925](/home/karsh/snap/typora/46/.config/Typora/typora-user-images/image-20211227201008925.png)
+![image-20211227201008925](./image-20211227201008925.png)
 
 ### Function signature
 
@@ -1943,7 +1937,7 @@ const func called
 
   To achieve dynamic polymorphism. Is the ability to call Derived class function using Base class pointer or reference. 
 
-  <img src="/home/karsh/snap/typora/46/.config/Typora/typora-user-images/image-20211228074230356.png" alt="image-20211228074230356" style="zoom: 50%;" />
+  <img src="./image-20211228074230356.png" alt="image-20211228074230356" style="zoom: 50%;" />
 
 - HOW to use virtual function?   
 
@@ -2009,7 +2003,7 @@ In otherwords vtable stores pointers to functions which is to be called. In belo
 - vtable of class B stores function address of B::bar and B::qux. 
 -  vtable of class C stores function pointers of C::bar and B::qux
 
-<img src="/home/karsh/snap/typora/46/.config/Typora/typora-user-images/image-20211228080039601.png" alt="image-20211228080039601" style="zoom: 33%;" />
+<img src="./image-20211228080039601.png" alt="image-20211228080039601" style="zoom: 33%;" />
 
 Note: 
 
