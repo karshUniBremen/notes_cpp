@@ -485,7 +485,7 @@ The need for **dynamic_cast** generally arises to perform **derived class operat
 
 In short, **dynamic_cast is used to check at run-time if a downcast can be down correctly or not.** In case of upcast it either give compile error or returns nullptr or throws expection depending on polymorphic base class and pointer/reference explained later.
 
-<img src="./image-20211230080051540.png" alt="image-20211230080051540" style="zoom:50%;" />
+<img src="./images/image-20211230080051540.png" alt="image-20211230080051540" style="zoom:50%;" />
 
 In c++ downcast is allowed by dynamic_cast, whereas upcast is not allowed by dynamic_cast. **Downcast**  is casting a derived class object to a base class pointer
 
@@ -1847,13 +1847,13 @@ wp.reset();
 
 
 
-![image-20211227201100205](./image-20211227201100205.png)
+![image-20211227201100205](./images/image-20211227201100205.png)
 
 
 
 ##### Weak pointer main application is to remove cyclic dependency between shared_ptr.
 
-![image-20211227201008925](./image-20211227201008925.png)
+![image-20211227201008925](./images/image-20211227201008925.png)
 
 ### Function signature
 
@@ -1937,7 +1937,7 @@ const func called
 
   To achieve dynamic polymorphism. Is the ability to call Derived class function using Base class pointer or reference. 
 
-  <img src="./image-20211228074230356.png" alt="image-20211228074230356" style="zoom: 50%;" />
+  <img src="./images/image-20211228074230356.png" alt="image-20211228074230356" style="zoom: 50%;" />
 
 - HOW to use virtual function?   
 
@@ -2003,7 +2003,7 @@ In otherwords vtable stores pointers to functions which is to be called. In belo
 - vtable of class B stores function address of B::bar and B::qux. 
 -  vtable of class C stores function pointers of C::bar and B::qux
 
-<img src="./image-20211228080039601.png" alt="image-20211228080039601" style="zoom: 33%;" />
+<img src="./images/image-20211228080039601.png" alt="image-20211228080039601" style="zoom: 33%;" />
 
 Note: 
 
@@ -2231,4 +2231,82 @@ int main(){
   return 0;
 }
 ```
+
+
+
+### UML-Class Diagram
+
+#### Association 
+
+- has-a relationship 
+- class-2 is passed by reference to class-1 attribute (in a constructor, copy constructor etc) 
+- life cycle of classes are not bounded. 
+- weak binding 
+
+#### Aggregation 
+
+- has-a relationship (whole and part)
+
+- Part may or may not exist without a whole
+
+- Aggregation is same as association but aggregation represents part-whole relationship (one-to-many, many-to-many)
+
+- Aggregation does not convey anything more than association
+
+- class-2 is passed by reference to class-1 attribute (in a constructor, copy constructor etc) 
+
+- life cycle of whole and part are not bounded. when whole die, part may or may die.
+
+  
+
+#### Dependency 
+
+- uses or needs in method (class 1 uses class 2)
+
+- implies that an object of class-1 accepts class-2 object as a method parameter, instantiates, or uses class-2 object. 
+
+- life cycle of classes are not bounded
+
+  ​						
+
+#### Inheritance  
+
+- is-a relationship (parent-child)
+
+##### Generation
+
+- Parent-child relationship. (is-a) (virtual method)
+
+- Child class is more specialized (in terms of functionality) than parent class
+
+##### Realization/Abstraction
+
+- Parent-child relationship. (is-a) (Pure virtual function)
+- One entity denotes some responsibility which is not implemented by itself and the other entity that implements them. 
+- Child class implements a functionality which is not implemented in parent class (Pure virtual method)
+
+
+
+#### Composition 
+
+- has-a relationship (whole and part)
+- contains (New operator)
+- Part can't exist without a whole
+- life cycle is bounded. whole and part are dependent. When whole dies, part also dies. 
+
+
+
+![Class diagram - Wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Uml_classes_en.svg/300px-Uml_classes_en.svg.png)
+
+
+
+References
+
+[1]: https://nirajrules.wordpress.com/2011/07/15/association-vs-dependency-vs-aggregation-vs-composition/	"UML concept explained"
+[2]: https://cppcodetips.wordpress.com/2013/12/23/uml-class-diagram-explained-with-c-samples/	"U,ML with code examples"
+[3]: https://www.youtube.com/watch?v=UI6lqHOVHic	"Lucid chart how to draw class diagram youtube video"
+
+
+
+
 
